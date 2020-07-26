@@ -256,6 +256,10 @@ a:hover{
         grid-column: 1/2;
         border: black solid 2px;
     }
+    
+    a:hover{
+        color: inherit;
+    }
 
 
 
