@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+</head>
+
+<body>
+
+    <div id="welcome">
+        <div id="quote-container">
+            <div id="quote"></div>
+            <div id="sub"></div>
+        </div>
+    </div>
+
+    <div id="topbar" class="">
+        <div id="main-title"><a href="#">Project Lithium</a></div>
+        <div id="headings">
+            <div id="about-header"><a href="#sub">ABOUT</a></div>
+            <div id="process-header"><a href="#about">PROCESS</a></div>
+            <div id="portfolio-header"><a href="#process">PORTFOLIO</a></div>
+            <div id="contact-header"><a href=#contact>CONTACT</a></div>
+        </div>
+    </div>
+
+    <div id="content">
+        <div id="about">
+            <div class="title">SINGAPOREAN WEBSITE DEVELOPMENT</div>
+            <div class="information">At Project Lithium, we develop cutting edge websites to support
+                buisnesses and start-ups. We understand the importance of brand image and create websites
+                that leave lasting impressions on customers or clients. Our development process is rigourous and spares no expense,
+                we create a variety of prototypes to ensure we are able to find something that catches your interest.
+                Our small size means we can create extremely specialized, botique websites for discerning customers.
+            </div>
+            <div id="contact-button-container">
+                <div id="contact-button"><a href=#contact>CONTACT US</a></div>
+            </div> 
+        </div>
+
+        <div id="process">
+            <div class="title">OUR UNIQUE THREE STEP PROCESS</div>
+            <div class="information">We at Project Lithium recognize the power websites hold, which 
+                is why we design and develop so carefully. When creating websites, we follow a three step
+                process. First, we will discuss what you want your website to do, and look at some templates 
+                or other websites that you like. Second, we will design and develop three prototype websites for you to 
+                consider and give feedback on. From there, we will lean into the elements you like and remove
+                what you don't in order to create a website that is personal, asthetic and utilitarian. 
+            </div>
+
+            <div id="process-details">
+                <div id="process-1">
+                    <div class="information-big">Discussion of requirements and target setting with templates</div>
+                </div>
+                <div id="process-2">
+                    <div class="information-big">Prototype creation and customization with customer feedback</div>
+                </div>
+                <div id="process-3">
+                    <div class="information-big">Finalization of project and publication with domain purchase</div>
+                </div>
+            </div>
+        </div>
+
+        <div id="portfolio">
+            <div class="title">SUCCESFUL PROJECTS</div>
+            <div class="information">We help local buisnesses materialize their dream websites</div>
+            <div id="portfolio-details">
+                <div id="portfolio-1">
+                    <img class="portfolio-image" src="cks.png">
+                </div>
+                <div id="portfolio-2">
+                    <img class="portfolio-image" src="attitude.png">
+                </div>
+            </div>
+        </div>
+
+        <div id="contact">
+            <div class="title">CONTACT US</div>
+
+            <div class="information">Contact us today at our email adress, which is checked
+                daily, or leave us a call.
+            </div>
+
+            <div class="information">
+                <i style="font-size:24px" class="fa">&#xf095;</i>
+                <a href="tel:81568056">Call us at 8156-8056</a>
+            </div>
+
+            <div class="information">
+                <a href = "mailto: abc@example.com">
+                    <i style="font-size:24px" class="fa">&#xf0e0;</i>Email us at contactprojectlithium@gmail.com</a>
+            </div>
+
+        </div>
+        
+
+    </div>
+
+
+    <script>
+
+        var index = 0;
+
+        var quote1 = "POWERFUL SEO";
+        var quote2 = "LIGHTNING SPEED";
+        var quote3 = "DIGITAL EXPERTISE";
+        var quote4 = "EXCELLENT EXECUTION";
+        var quote5 = "INFINITE POSSIBILITY";
+        var quote6 = "INCREDIBLE PASSION";
+
+        var bquote1 = "We use search engine optimizing algorithims to give your page the best results";
+        var bquote2 = "We develop with web browsers in mind to create fast websites";
+        var bquote3 = "We understand a variety of modern technologies and harness them to create your website";
+        var bquote4 = "We work tirelessely to create seamless websites for our clients";
+        var bquote5 = "We love hearing ideas from clients and will always strive to make your wishes a reality";
+        var bquote6 = "We love our buisness, and soon you will too!";
+
+        var quotes = [quote1, quote2, quote3, quote4, quote5, quote6];
+        var bquotes = [bquote1, bquote2, bquote3, bquote4, bquote5, bquote6];
+
+
+        function change() {
+
+
+            document.getElementById("quote").className = "fade";
+            document.getElementById("sub").className = "fade";
+
+
+            setTimeout(() => {
+                document.getElementById("quote").innerText = quotes[index % 6];
+                document.getElementById("sub").innerText = bquotes[index % 6];
+
+            }, 1000);
+
+
+
+            setTimeout(() => {
+                document.getElementById("quote").className = "show";
+                document.getElementById("sub").className = "show";
+
+            }, 1000);
+
+
+            index++;
+            setTimeout(change, 4000);
+        }
+
+        change();
+
+
+        var controller = new ScrollMagic.Controller();
+        var scene = new ScrollMagic.Scene({
+            triggerElement: "#content"
+        })
+        .setClassToggle("#topbar","dark-background")
+        .triggerHook(0.999)
+        .addTo(controller);
+    </script>
+
+</body>
+</html>

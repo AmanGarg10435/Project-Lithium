@@ -1,0 +1,263 @@
+body{
+    margin:0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: "Poppins";
+    height: 200vw;
+    color: white;
+    font-size: 16px;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover{
+    color: grey;
+}
+
+#welcome{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top:0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    background: #200122;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #6f0000, #200122);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #6f0000, #200122); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#quote-container{
+    text-align: center;
+}
+
+#quote{
+    font-size: 80px;
+    font-family: impact;
+    letter-spacing: 4px;
+}
+
+#sub{
+    font-size: 20px;
+}
+
+
+#topbar{
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100vw;
+    height: 8vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index:1;
+    transition: 0.5s;
+}
+.dark-background{
+    background-color: black !important;
+}
+#main-title{
+    font-size: 40px;
+    font-family: impact;
+    letter-spacing: 2px;
+}
+
+#headings{
+    display: flex;
+    justify-content: space-between;
+    width: 50vw;
+}
+
+#content{
+    position: absolute;
+    top: 100vh;
+    right: 0;
+    left: 0;
+    margin: 0 10vw 0 10vw;
+    color: black;
+}
+
+
+#content > * > * {
+    text-align: center;
+}
+
+.title{
+    font-size: 35px;
+    font-family: impact;
+    letter-spacing: 0.2vw;
+    margin-bottom: 1vw;
+    margin-top: 10vh;
+}
+
+.information{
+    line-height: 35px;
+    color: #434343;
+    margin-bottom: 2vh;
+}
+
+.information-big{
+    color: black;
+    font-size: 20px;
+}
+
+#contact-button-container{
+    display: flex;
+    justify-content: center;
+}
+#contact-button{
+    color: white;
+    background-color: #FF0000;
+    padding: 10px 70px 10px 70px;
+    width: fit-content;
+}
+
+#contact-button:hover{
+    background-color: black;
+}
+
+#process-details{
+    width: 100%;
+    height: 25vh;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 2vw;
+}
+
+#process-details > *{
+    border: solid 3px red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#process-1{
+    grid-row: 1/1;
+    grid-column: 1/2;
+}
+
+#process-2{
+    grid-row: 1/1;
+    grid-column: 2/3;
+}
+
+#process-3{
+    grid-row: 1/1;
+    grid-column: 3/4;
+}
+
+#portfolio-details{
+    width: 100%;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1vw;
+    overflow: hidden;
+}
+
+#portfolio-1{
+    grid-row: 1/2;
+    grid-column: 1/2;
+}
+
+#portfolio-2{
+    grid-row:1/2;
+    grid-column:2/3;
+}
+
+.portfolio-image{
+    width: 100%;
+    overflow: hidden;
+}
+
+.fade{
+    animation-name: fading;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fading{
+    0%{opacity:1;}
+    100%{opacity: 0;}
+}
+
+
+.show{
+    animation-name: showing;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes showing{
+    0%{opacity:0;}
+    100%{opacity: 1;}
+}
+
+.dark{
+    background-color: black;
+}
+
+@media (max-width: 600px){
+    #welcome{
+        display: none;
+    }
+    #headings{
+        display: none;
+    }
+
+    #content{
+        top: 8vh;
+    }
+
+    #process-details{
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-columns: 1fr;
+    }
+
+    #process-1{
+        grid-row: 1/2;
+        grid-column: 1/2;
+    }
+
+    #process-2{
+        grid-row: 2/3;
+        grid-column: 1/2;
+    }
+
+    #process-3{
+        grid-row: 3/4;
+        grid-column: 1/2;
+        margin-bottom: 10vh;
+    }
+
+    #portfolio-details{
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr;
+    }
+
+
+    #portfolio-1{
+        grid-row: 1/2;
+        grid-column: 1/2;
+        border: black solid 2px;
+    }
+
+    #portfolio-2{
+        grid-row: 2/3;
+        grid-column: 1/2;
+        border: black solid 2px;
+    }
+
+
+
+
+}
